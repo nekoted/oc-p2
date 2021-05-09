@@ -1,0 +1,82 @@
+:root {
+  --main-color: #0065fc;
+  --main-color-light: #deebff;
+  --main-bg-color: #f2f2f2;
+}
+
+html {
+  font-family: "Raleway", sans-serif;
+  color: #000;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/*
+HEADER
+*/
+
+.header {
+  display: grid;
+  grid-template-columns: auto min-content min-content;
+  grid-template-areas: "logo menu inscription";
+}
+
+.header-logo {
+  grid-area: logo;
+  align-self: center;
+  background: red;
+  width: 90px;
+  height: auto;
+}
+
+.header-menu {
+  grid-area: menu;
+  background: green;
+  display: flex;
+}
+
+.header-menu > * {
+  display: inline-block;
+}
+
+.header-menu > a {
+  display: inline-block;
+  padding: 50px 20px;
+  width:50%;
+  min-width: 200px;
+  text-align: center;
+}
+
+.header-menu > a:hover {
+  border-top: var(--main-color) 2px solid;
+}
+
+.header-menu__active {
+  border-top: var(--main-color) 2px solid;
+  color: var(--main-color);
+}
+
+.header-inscription {
+  grid-area: inscription;
+  background: yellow;
+  display: inline-block;
+  padding: 50px 20px;
+  font-weight: bold;
+  color: var(--main-color);
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .header {
+    grid-template-areas:
+      "logo inscription"
+      "menu menu";
+  }
+}
